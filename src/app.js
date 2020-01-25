@@ -4,6 +4,7 @@ const app = express()
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs') //app.set used to set value for a setting. view engine is the setting and hbs(handlebars) is the value
 //Views is supposed to be the folder where handlebar templates are there. We can customize it to some other location
@@ -103,6 +104,6 @@ app.get('*', (req, res) => {  // '*' is a express wildcard character used to mat
     })
 })
 
-app.listen(3000, function(){
-    console.log('Server is up and running at 3000') //gets displayed when the application is running on the terminal
+app.listen(port, function(){
+    console.log('Server is up and running at' + port) //gets displayed when the application is running on the terminal
 }) //it starts up the server(the process of starting up a server is asynchronous process) and has it listen to a particular port. The second argument is a callback function that we have passed when the server is up and running.

@@ -24,7 +24,7 @@ const m2 = document.querySelector('#m2')
 weatherForm = addEventListener('submit', (e) => {
     e.preventDefault() //prevents the default behaviour of the browser to get refreshed
     const location = search.value 
-    const url = 'http://localhost:3000/weather?address=' + encodeURIComponent(location)
+    const url = '/weather?address=' + encodeURIComponent(location)
     m1.textContent = "Loading Data"
     m2.textContent = " "
     fetch(url).then((response) => {
